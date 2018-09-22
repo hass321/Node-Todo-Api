@@ -28,5 +28,13 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp',{ useNewUrlParser: true 
     //     console.log(JSON.stringify(result.ops, undefined, 2));
     // });
 
+    db.collection('Users').insert({
+        name: 'Abdul',
+        age: 26
+    }, (err, res) => {
+        if(err) return console.log('Unable to insert todo', err);
+        console.log(JSON.stringify(res, undefined, 2));
+    })
+
     db.close();
 });
